@@ -1,5 +1,4 @@
-import TableLoader from './loaders/Table';
-
+import TableLoader from '../components/loaders/Table';
 import {DATA_API_ROOT, GOSPEL_DATE} from '../constants';
 import useIsVisible from '../hooks/useIsVisible';
 import useStickySWR from '../hooks/useStickySWR';
@@ -12,18 +11,27 @@ import {Helmet} from 'react-helmet';
 import {useLocation} from 'react-router-dom';
 import {useLocalStorage, useSessionStorage, useWindowSize} from 'react-use';
 
-const Actions = lazy(() => retry(() => import('./Actions')));
-const Footer = lazy(() => retry(() => import('./Footer')));
-const Level = lazy(() => retry(() => import('./Level')));
-const LevelVaccinated = lazy(() => retry(() => import('./LevelVaccinated')));
-const MapExplorer = lazy(() => retry(() => import('./MapExplorer')));
-const MapSwitcher = lazy(() => retry(() => import('./MapSwitcher')));
-const Minigraphs = lazy(() => retry(() => import('./Minigraphs')));
-const Search = lazy(() => retry(() => import('./Search')));
-const StateHeader = lazy(() => retry(() => import('./StateHeader')));
-const Table = lazy(() => retry(() => import('./Table')));
+const Actions = lazy(() => retry(() => import('../components/Actions')));
+const Footer = lazy(() => retry(() => import('../components/Footer')));
+const Level = lazy(() => retry(() => import('../components/Level')));
+
+const LevelVaccinated = lazy(() =>
+  retry(() => import('../components/LevelVaccinated'))
+);
+const MapExplorer = lazy(() =>
+  retry(() => import('../components/MapExplorer'))
+);
+const MapSwitcher = lazy(() =>
+  retry(() => import('../components/MapSwitcher'))
+);
+const Minigraphs = lazy(() => retry(() => import('../components/Minigraphs')));
+const Search = lazy(() => retry(() => import('../components/Search')));
+const StateHeader = lazy(() =>
+  retry(() => import('../components/StateHeader'))
+);
+const Table = lazy(() => retry(() => import('../components/Table')));
 const TimeseriesExplorer = lazy(() =>
-  retry(() => import('./TimeseriesExplorer'))
+  retry(() => import('../components/TimeseriesExplorer'))
 );
 
 function Home() {

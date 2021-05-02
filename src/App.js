@@ -1,5 +1,4 @@
 import './App.scss';
-import Blog from './components/Blog';
 import Navbar from './components/Navbar';
 import {retry} from './utils/commonFunctions';
 
@@ -7,10 +6,10 @@ import {lazy, useState, Suspense, useEffect} from 'react';
 import {Route, Redirect, Switch, useLocation} from 'react-router-dom';
 import useDarkMode from 'use-dark-mode';
 
-const Home = lazy(() => retry(() => import('./components/Home')));
-const About = lazy(() => retry(() => import('./components/About')));
+const Home = lazy(() => retry(() => import('./home/Home')));
 const State = lazy(() => retry(() => import('./components/State')));
-const Resources = lazy(() => retry(() => import('./components/Resources')));
+const Donate = lazy(() => retry(() => import('./donate/Donate')));
+const CovidIndia = lazy(() => retry(() => import('./misc/CovidIndia')));
 const LanguageSwitcher = lazy(() =>
   retry(() => import('./components/LanguageSwitcher'))
 );
@@ -28,21 +27,15 @@ const App = () => {
       showInNavbar: true,
     },
     {
-      pageLink: '/blog',
-      view: Blog,
-      displayName: 'Blog',
+      pageLink: '/donate',
+      view: Donate,
+      displayName: 'Donate',
       showInNavbar: true,
     },
     {
-      pageLink: '/about',
-      view: About,
-      displayName: 'About',
-      showInNavbar: true,
-    },
-    {
-      pageLink: '/resources',
-      view: Resources,
-      displayName: 'Resources',
+      pageLink: '/covidindia',
+      view: CovidIndia,
+      displayName: 'Covid India',
       showInNavbar: true,
     },
     {

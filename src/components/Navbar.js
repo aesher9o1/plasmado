@@ -7,7 +7,7 @@ import {
 import locales from '../i18n/locales.json';
 
 import {useState, useCallback, useRef} from 'react';
-import {Book, HelpCircle, Home, Moon, Sun, Phone} from 'react-feather';
+import {Home, Moon, Sun, Map, BarChart} from 'react-feather';
 import {useTranslation} from 'react-i18next';
 import {Link} from 'react-router-dom';
 import {useTransition, animated} from 'react-spring';
@@ -60,7 +60,9 @@ function Navbar({
 
       <div className="navbar-middle">
         <Link to="/" onClick={setExpand.bind(this, false)}>
-          Covid19<span>India</span>
+          Plasma
+          <br />
+          <span>Do</span>
         </Link>
       </div>
 
@@ -82,21 +84,18 @@ function Navbar({
                 <Home {...activeNavIcon('/')} />
               </span>
             </Link>
-            <Link to="/blog">
+            <Link to="/donate">
               <span>
-                <Book {...activeNavIcon('/blog')} />
+                <Map {...activeNavIcon('/donate')} />
               </span>
             </Link>
-            <Link to="/about">
+
+            <Link to="/covidindia">
               <span>
-                <HelpCircle {...activeNavIcon('/about')} />
+                <BarChart {...activeNavIcon('/covidindia')} />
               </span>
             </Link>
-            <Link to="/resources">
-              <span>
-                <Phone {...activeNavIcon('/resources')} />
-              </span>
-            </Link>
+
             <span>
               <SunMoon {...{darkMode}} />
             </span>
